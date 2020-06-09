@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Lottie</title>
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="apng-canvas.min.js"></script>
+	<style>
+	
+	</style>
+</head>
+<body>
+	<div class="apng-image">
+		<img src="img/animated.png" alt="">
+	</div>
+	<div class="info">
+	
+	</div>
+<script>
+        APNG.ifNeeded()
+			.then(function () {
+				$(".apng-image").find("img").each(function () { APNG.animateImage(this); });
+				var msg = '<p>canvas 로 로드됩니다.</p>';
+				$('.info').append(msg);
+			})
+			.catch(function () {
+				var msg = '<p>apng 로 로드됩니다.</p>';
+				$('.info').append(msg);
+			});
+</script>
+</body>
+</html>
